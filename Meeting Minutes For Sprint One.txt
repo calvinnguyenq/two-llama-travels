@@ -1,0 +1,43 @@
+Sprint One Project 3 Meeting Notes/Summary
+Meeting One:
+Date: November 7th
+Summary: 
+Steven:
+Put all the tasks on Jira, issues with the priority and product backlog. Working on manually updating the charts, system design needs to be worked on. Web design sketch (mostly done in the proposal). 
+Calvin:
+Starting on learning process for express, push further for learning expressions.
+Anne:
+Learning Heroku, problem with the GitHub connection. Overall, something starting to work on
+David:
+Learning react, created a little loading symbol to deploy on to Heroku, Goal is to learn a bit more and learn a bit of Heroku
+Other Notes:
+Stepping forward we will learn more about the languages, getting something deployed. We also talked about in this meeting about how we wanted to go about stepping through the process of the of how we are going to test, as well as what database Heroku has. 
+
+
+
+Meeting Two:
+Date: Nov 6th 2021
+Summary:
+Steven: 
+Steven has been looking to Jira more (many different routes, 5 versions) Continue to find the best version for use into 
+Calvin:
+ Focused on learning more Express
+Anne:
+ Learning more about Herko, questions regarding the GitHub, stared learning some express and react
+David:
+ Learned more about react and created a small design for our website as it is under construction
+
+Other Notes:
+Goal for next meeting is to get Davids setup deployed for a start and to get the burn charts up and continuously learning express and react
+
+Meeting Three:
+Date: Nov 7th, 2021
+Summary:
+Steven:
+Backlog is updated (we need to assign tasks to ourselves), burn down chart works, logging stuff is officially ready
+Calvin:
+Basics down for a login in screen (will continue to work on), continue to work on the 
+Anne:
+Deploying what we have on Heroku, finishing up writing the meeting minutes and starting to work on the feature is the plan 
+David:
+David has been working on react, and starting to look into a search bar
