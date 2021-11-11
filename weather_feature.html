@@ -1,0 +1,25 @@
+<!-- the DIV that will contain the widget -->
+<div class="weatherWidget" ></div>
+
+<script>
+   
+   var loc = window.prompt("Enter your Location: ");
+   window.weatherWidgetConfig =  window.weatherWidgetConfig || [];
+   window.weatherWidgetConfig.push({
+       selector:".weatherWidget",
+       apiKey:"XGX5QTAJ8S85CYHLFNKXL4MT5", //Sign up for your personal key
+       location: loc, //Enter an address
+       unitGroup:"us", //"us" or "metric"
+       forecastDays:7, //how many days forecast to show
+       title: loc, //optional title to show in the 
+       showTitle:true, 
+       showConditions:true
+   });
+  
+   (function() {
+   var d = document, s = d.createElement('script');
+   s.src = 'https://www.visualcrossing.com/widgets/forecast-simple/weather-forecast-widget-simple.js';
+   s.setAttribute('data-timestamp', +new Date());
+   (d.head || d.body).appendChild(s);
+   })();
+</script>
