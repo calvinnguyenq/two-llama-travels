@@ -57,6 +57,8 @@ function HotelList(props) {
           title="Hotels"
           columns={columns}
           data={apiResponse}
+          fixedHeader
+          fixedHeaderScrollHeight="300px"
           />
     );
 }
