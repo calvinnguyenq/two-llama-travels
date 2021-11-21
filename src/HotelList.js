@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import DataTable from 'react-data-table-component';
 var axios = require("axios").default;
 
 function HotelList(props) {
-  
+
     const [apiResponse, setApiResponse] = useState([])
 
     var options = {
@@ -34,19 +35,29 @@ function HotelList(props) {
       });
     }, []);
 
+    const columns = [
+      {
+        name: 'Name',
+        selector: row => row.name,
+      },
+      {
+        name: 'Stars',
+        selector: row => row.starRating,
+        sortable: true,
+      },
+      {
+        name: 'Price',
+        selector: row => row.ratePlan.price.current + " per night",
+        sortable: true,
+      },
+    ];
+
     return (
-        <div>
-          <ul>
-            {apiResponse.map(item => (
-                <li key={item.id}>
-                    Name:
-                       <span>{item.name}</span>
-                    Stars: 
-                       <span>{item.starRating}</span>
-                </li>   
-            ))}
-            </ul>
-        </div>
+        <DataTable
+          title="Hotels"
+          columns={columns}
+          data={apiResponse}
+          />
     );
 }
 
