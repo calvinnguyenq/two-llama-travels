@@ -4,34 +4,51 @@ var axios = require("axios").default;
 
 function Hotels(props) {
 
-    const [apiResponse, setApiResponse] = useState([])
-
-    var options = {
-        method: 'GET',
-        url: 'https://hotels4.p.rapidapi.com/properties/list',
-        params: {
-          destinationId: '1506246',
-          pageNumber: '1',
-          pageSize: '25',
-          checkIn: '2020-01-08',
-          checkOut: '2020-01-15',
-          adults1: '1',
-          sortOrder: 'PRICE',
-          locale: 'en_US',
-          currency: 'USD'
-        },
-        headers: {
-          'x-rapidapi-host': 'hotels4.p.rapidapi.com',
-          'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
-        }
-      };
+    const [getHotels, setHotels] = useState([])
     
+    var getLocationIdOptions = {
+      method: 'GET',
+      url: 'https://hotels4.p.rapidapi.com/locations/v2/search',
+      params: {query: 'new york', locale: 'en_US', currency: 'USD'},
+      headers: {
+        'x-rapidapi-host': 'hotels4.p.rapidapi.com',
+        'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
+      }
+    };
+
     useEffect(() => {
-      axios.request(options).then(function (response) {
-          setApiResponse(response.data.data.body.searchResults.results);
-          console.log(response.data.data.body.searchResults.results);
+      axios.request(getLocationIdOptions).then(function (response) {
+        let locationId = response.data.suggestions[0].entities[0].destinationId;
+        console.log(response.data.suggestions[0].entities[0].destinationId);
+
+        var getHotelsOptions = {
+          method: 'GET',
+          url: 'https://hotels4.p.rapidapi.com/properties/list',
+          params: {
+            destinationId: locationId,
+            pageNumber: '1',
+            pageSize: '25',
+            checkIn: '2020-01-08',
+            checkOut: '2020-01-15',
+            adults1: '1',
+            sortOrder: 'PRICE',
+            locale: 'en_US',
+            currency: 'USD'
+          },
+          headers: {
+            'x-rapidapi-host': 'hotels4.p.rapidapi.com',
+            'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
+          }
+        };
+
+        axios.request(getHotelsOptions).then(function (response) {
+            setHotels(response.data.data.body.searchResults.results);
+            console.log(response.data.data.body.searchResults.results);
+        }).catch(function (error) {
+            console.error(error);
+        });
       }).catch(function (error) {
-          console.error(error);
+        console.error(error);
       });
     }, []);
 
@@ -56,10 +73,10 @@ function Hotels(props) {
         <DataTable
           title="Hotels"
           columns={columns}
-          data={apiResponse}
+          data={getHotels}
           fixedHeader
           fixedHeaderScrollHeight="300px"
-          progressPending={(apiResponse.length === 0)}
+          progressPending={(getHotels.length === 0)}
           pagination
           />
     );
