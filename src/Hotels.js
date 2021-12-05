@@ -19,7 +19,7 @@ function Hotels(props) {
     useEffect(() => {
       axios.request(getLocationIdOptions).then(function (response) {
         let locationId = response.data.suggestions[0].entities[0].destinationId;
-        console.log(response.data.suggestions[0].entities[0].destinationId);
+        console.log(locationId);
 
         var getHotelsOptions = {
           method: 'GET',
