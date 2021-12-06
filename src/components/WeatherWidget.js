@@ -26,12 +26,7 @@ function WeatherWidget(props){
   }
   return (
     <div class="weatherWidget">
-      <button onClick={s}>
-        SHOW ME THE WEATHER!!!
-      </button>
-        
-      
-      
+      {s()}
     </div>
   )
 }

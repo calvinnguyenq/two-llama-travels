@@ -13,11 +13,6 @@ import './components/Footer.css';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 
-
-
-
-
-
 function App() {
 
   

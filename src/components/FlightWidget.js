@@ -39,9 +39,7 @@ function FlightWidget(props) {
         }
     return (
         <div id="widget-holder">
-            <button onClick={flight}>
-                SHOW ME FLIGHTS!!!
-            </button>
+            {flight()}
         </div>
     )
 }

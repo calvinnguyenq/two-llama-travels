@@ -9,7 +9,7 @@ function Hotels(props) {
     var getLocationIdOptions = {
       method: 'GET',
       url: 'https://hotels4.p.rapidapi.com/locations/v2/search',
-      params: {query: 'new york', locale: 'en_US', currency: 'USD'},
+      params: {query: props.destination, locale: 'en_US', currency: 'USD'},
       headers: {
         'x-rapidapi-host': 'hotels4.p.rapidapi.com',
         'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
@@ -69,7 +69,7 @@ function Hotels(props) {
       },
     ];
 
-    return (
+    return (props.destination && (
         <DataTable
           title="Hotels"
           columns={columns}
@@ -79,7 +79,7 @@ function Hotels(props) {
           progressPending={(getHotels.length === 0)}
           pagination
           />
-    );
+    )) || <div></div>;
 }
 
 export default Hotels;

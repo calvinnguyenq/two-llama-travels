@@ -1,11 +1,10 @@
 import React from 'react';
 import '../../App.css';
-import Destination from '../Destination';
+// import Destination from '../Destination';
 import video from '../../images/twollamavideo.mp4';
 
 function Home() {
     
-  
     function changeSizeByBtn() {
         document.getElementById('text').style.fontSize= 95 +'px';
     }
@@ -22,7 +21,7 @@ function Home() {
             <h1 id='text'>Your Llama Adventure Awaits You...</h1>
             
            
-            <Destination/>
+            {/* <Destination/> */}
             <video id='vid' src={video} autoPlay loop muted/>
             <br></br>
             <button type="button" onClick={decreaseSizeByBtn} name="btn1">
@@ -34,11 +33,6 @@ function Home() {
             <button type="button" onClick={stopVideo} name="btn3">
                 No Background
             </button>
-            
-            
-           
-
-
             
         </div>
     )

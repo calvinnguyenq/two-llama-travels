@@ -9,7 +9,6 @@ var axios = require("axios").default;
 function Itinerary(props) {
 
     // Get Restaurant Information
-
     const [getRestaurants, setRestaurants] = useState([]);
 
     var restaurantLocationOptions = {
@@ -20,7 +19,7 @@ function Itinerary(props) {
           'x-rapidapi-host': 'worldwide-restaurants.p.rapidapi.com',
           'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
         },
-        params: {q: 'London', language: 'en_US'}
+        params: {q: props.destination, language: 'en_US'}
     };
 
     useEffect(() => {
@@ -60,7 +59,7 @@ function Itinerary(props) {
     var placesLocationOptions = {
         method: 'GET',
         url: 'https://opentripmap-places-v1.p.rapidapi.com/en/places/geoname',
-        params: {name: 'London'},
+        params: {name: props.destination},
         headers: {
             'x-rapidapi-host': 'opentripmap-places-v1.p.rapidapi.com',
             'x-rapidapi-key': 'fc1f1ff2d3mshe2267e55a9681dfp1c29e0jsnfc471925dd78'
@@ -129,7 +128,6 @@ function Itinerary(props) {
     }, []);
 
     return (
-        <div style={{backgroundColor: 'rgb(220, 220, 220)'}}>
         <VerticalTimeline>
             
             {/* Breakfast */}
@@ -218,59 +216,8 @@ function Itinerary(props) {
                 <p>{"Phone: "}<span style={{ fontWeight: "lighter"}}>{getRestaurants[2]?.phone}</span></p>
             </VerticalTimelineElement>
 
-        
         </VerticalTimeline>
-        </div>
     );
 }
-
-
-// Tourist Attraction #1
-//             <VerticalTimelineElement
-//                contentStyle={{ background: 'rgb(255, 255, 255)', color: '#000' }}
-//                contentArrowStyle={{ borderRight: '7px solid  rgb(255, 255, 255)' }}
-//                date="11:00am"
-//                iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-//                icon={<Place color="action" />}
-//             >
-//                 <h3 className="vertical-timeline-element-title">Tourist Attraction</h3>
-//                 <p>This is really good</p>
-//             </VerticalTimelineElement>
-
-//             {/* Lunch */}
-//             <VerticalTimelineElement
-//                 contentStyle={{ background: 'rgb(255, 255, 255)', color: '#000' }}
-//                 contentArrowStyle={{ borderRight: '7px solid  rgb(255, 255, 255)' }}
-//                 date="11:00am"
-//                 iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-//                 icon={<Restaurant color="action" />}
-//             >
-//                 <h3 className="vertical-timeline-element-title">{lunchRestaurant.name}</h3>
-//                 <p>{lunchRestaurant.phone}</p>
-//             </VerticalTimelineElement>
-
-//             {/* Tourist Attraction #2 */}
-//             <VerticalTimelineElement
-//                contentStyle={{ background: 'rgb(255, 255, 255)', color: '#000' }}
-//                contentArrowStyle={{ borderRight: '7px solid  rgb(255, 255, 255)' }}
-//                date="11:00am"
-//                iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-//                icon={<Place color="action" />}
-//             >
-//                 <h3 className="vertical-timeline-element-title">Tourist Attraction</h3>
-//                 <p>This is really good</p>
-//             </VerticalTimelineElement>
-
-//             {/* Dinner */}
-//             <VerticalTimelineElement
-//                 contentStyle={{ background: 'rgb(255, 255, 255)', color: '#000' }}
-//                 contentArrowStyle={{ borderRight: '7px solid  rgb(255, 255, 255)' }}
-//                 date="11:00am"
-//                 iconStyle={{ background: 'rgb(255, 255, 255)', color: '#fff' }}
-//                 icon={<Restaurant color="action" />}
-//             >
-//                 <h3 className="vertical-timeline-element-title">{dinnerRestaurant.name}</h3>
-//                 <p>{dinnerRestaurant.phone}</p>
-//             </VerticalTimelineElement>
 
 export default Itinerary;
