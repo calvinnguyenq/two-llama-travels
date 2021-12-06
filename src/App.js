@@ -19,7 +19,7 @@ function App() {
     return (
         <Router>
           <Navbar/>
-          <Routes>
+          <Routes style={{ flex: 1 }}>
             <Route path='/' exact element={ <Home/> }/>
             <Route path='/sign-up' element={ <Signup/> }/>
             <Route path='/log-in' element={ <Login/> }/>

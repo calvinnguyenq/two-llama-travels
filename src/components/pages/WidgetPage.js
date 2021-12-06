@@ -30,7 +30,7 @@ class WidgetPage extends React.Component{
       <div className="widget-page">
         <br></br>
         <video id='vid' src={video} autoPlay loop muted/>
-        <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}} onSubmit={this.handleChange}>
+        <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onSubmit={this.handleChange}>
           <div>
             <label>
               <input type="text" name="destination" component="input" placeholder='Enter Your Destination...'/>
@@ -39,21 +39,19 @@ class WidgetPage extends React.Component{
               <input type="text" name="location" component="input" placeholder='Enter Your Location...'/>
             </label>
           </div>
-          <Button style={{}} type="submit">Submit</Button>
+          <Button type="submit">Submit</Button>
         </form>
+
 
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
           <div style={{ width: "75%", margin: '20px' }}>{this.state.value && <WeatherWidget destination={this.state.value}/>}</div>
           <div style={{ width: "40%", margin: '20px' }}>{this.state.value && <FlightWidget destination={this.state.value} place={this.state.value2}/>}</div>
           <div style={{ width: "40%", margin: '20px' }}>{this.state.value && <Hotels destination={this.state.value} />}</div>
-          <div style={{ width: "100%", marginTop: '20px', fontColor: 'white'}}>{this.state.value && <h1>Itinerary</h1>}</div>
+          <div style={{ width: "100%", marginTop: '20px', fontColor: 'white' }}>{this.state.value && <h1>Itinerary</h1>}</div>
           <div style={{ width: "100%" }}>{this.state.value && <Itinerary destination={this.state.value} />}</div>
         </div>
 
-        <button type="button" onClick={this.stopVideo}>
-          No Background
-        </button>
-            
+        <Button onClick={this.stopVideo}>No Background</Button>
       </div>
     );
   }
