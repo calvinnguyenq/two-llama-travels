@@ -6,14 +6,11 @@
     font-family: 'PT Sans', sans-serif;
 }
 
-
-
 .sign-up,
 .log-in,
 .widget-page,
 .about-us,
-.contact-us,
-.accessibility-menu{
+.contact-us{
     height: 90vh;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,6 +49,17 @@
 .home h1{
     line-height: 15vh;
     height: 30vh;
+    color: white;
+    text-shadow:
+        2px 0 0 #000,
+        -2px 0 0 #000,
+        0 2px 0 #000,
+        0 -2px 0 #000,
+        1px 1px 0 #000,
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 5px #000;
 }
 .home button{
     background-color: black;

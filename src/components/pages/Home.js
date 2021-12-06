@@ -6,8 +6,10 @@ import { Button } from "@material-ui/core";
 function Home() {
     return (
         <div className='home'>
-            <h1 id='text'>Your Llama Adventure Awaits You...</h1>    
-            <Button variant="contained" href="/widget-page">Choose Your Destination</Button>
+            <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                <h1 id='text'>Your Llama Adventure Awaits You...</h1>    
+                <Button variant="contained" color="secondary" size="large" href="/widget-page">Choose Your Destination</Button>
+            </div>
             <video id='vid' src={video} autoPlay loop muted/>
         </div>
     )

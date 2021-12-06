@@ -8,6 +8,7 @@ import Sidebar from 'react-sidebar';
 
 function changeSizeByBtn() {
     document.getElementById('text').style.fontSize = 95 +'px';
+                
 }
 function decreaseSizeByBtn() {
     document.getElementById('text').style.fontSize = 50 +'px';
@@ -73,7 +74,7 @@ function Navbar() {
                     </List>
                 }
                 open={isOpen}
-                styles={{ root: { top: "80px" }, sidebar: { background: "rgba(0,0,0,0.28)", bottom: "75%" }, overlay: { top: '80px' }, content: { top: '10px' } }}
+                styles={{ root: { top: "80px", right: "90%", bottom: "67%" }, sidebar: { background: "rgba(0,0,0,0.5)" }, content: { top: '10px' } }}
             >
             </Sidebar>
         </div>

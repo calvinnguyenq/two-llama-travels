@@ -50,8 +50,6 @@ class WidgetPage extends React.Component{
           <div style={{ width: "100%", marginTop: '20px', fontColor: 'white' }}>{this.state.value && <h1>Itinerary</h1>}</div>
           <div style={{ width: "100%" }}>{this.state.value && <Itinerary destination={this.state.value} />}</div>
         </div>
-
-        <Button onClick={this.stopVideo}>No Background</Button>
       </div>
     );
   }
