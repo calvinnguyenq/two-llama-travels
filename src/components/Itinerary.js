@@ -158,8 +158,8 @@ function Itinerary(props) {
                     <h3>{getFirstPlace?.name}</h3>
                     <h3 style={{ fontWeight: "lighter" }}>Tourist Attraction</h3>
                 </div>
-                <h4 style={{ fontWeight: "lighter" }}>{getFirstPlace?.wikipedia_extracts?.text}</h4>
-                <div style={{ display: "flex", justifyContent: "space-around"}}>
+                <h4 style={{ fontWeight: "lighter", marginTop: '20px' }}>{getFirstPlace?.wikipedia_extracts?.text}</h4>
+                <div style={{ display: "flex", marginTop: '20px', justifyContent: "space-around"}}>
                     {!(getFirstPlace?.wikipedia) || <Button variant="contained" href={getFirstPlace?.wikipedia} endIcon={<Language />}>Wikipedia</Button>}
                     {!(getFirstPlace?.otm) || <Button variant="contained" href={getFirstPlace?.otm} endIcon={<Map />}>Open Trip Map</Button>}    
                 </div>
@@ -193,8 +193,8 @@ function Itinerary(props) {
                     <h3>{getSecondPlace?.name}</h3>
                     <h3 style={{ fontWeight: "lighter", flexShrink: 0 }}>Tourist Attraction</h3>
                 </div>
-                <h4 style={{ fontWeight: "lighter" }}>{getSecondPlace?.wikipedia_extracts?.text}</h4>
-                <div style={{ display: "flex", justifyContent: "space-around"}}>
+                <h4 style={{ fontWeight: "lighter", marginTop: '20px' }}>{getSecondPlace?.wikipedia_extracts?.text}</h4>
+                <div style={{ display: "flex", justifyContent: "space-around", marginTop: '20px' }}>
                     {!(getSecondPlace?.wikipedia) || <Button variant="contained" href={getSecondPlace?.wikipedia} endIcon={<Language />}>Wikipedia</Button>}
                     {!(getSecondPlace?.otm) || <Button variant="contained" href={getSecondPlace?.otm} endIcon={<Map />}>Open Trip Map</Button>}    
                 </div>

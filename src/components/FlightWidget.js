@@ -38,7 +38,7 @@ function FlightWidget(props) {
             .catch(error => console.log('error', error));
         }
     return (
-        <div id="widget-holder">
+        <div id="widget-holder" style={{ border: '3px solid white', borderRadius: '4px' }} >
             {flight()}
         </div>
     )

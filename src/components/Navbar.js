@@ -37,12 +37,7 @@ function Navbar() {
         <div>
             <nav className='navbar'>
                 <div style={{ justifySelf: 'flex-start', alignSelf: 'center' }}> 
-                    <Button 
-                        variant="popover" 
-                        onClick={handleClick}
-                    >
-                        <HamburgerArrow isActive={isOpen}  barColor="white"/>
-                    </Button>
+                    <HamburgerArrow isActive={isOpen} onClick={handleClick} barColor="white"/>
                 </div>
                 <div className='nav-container'>
                     <li className='nav-item'>
@@ -76,6 +71,7 @@ function Navbar() {
                 open={isOpen}
                 styles={{ root: { top: "80px", right: "90%", bottom: "67%" }, sidebar: { background: "rgba(0,0,0,0.5)" }, content: { top: '10px' } }}
             >
+                <div id="blanksoidontgetanerror"></div>
             </Sidebar>
         </div>
     )

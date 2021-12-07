@@ -70,15 +70,16 @@ function Hotels(props) {
     ];
 
     return (props.destination && (
-        <DataTable
-          title="Hotels"
-          columns={columns}
-          data={getHotels}
-          fixedHeader
-          fixedHeaderScrollHeight="300px"
-          progressPending={(getHotels.length === 0)}
-          pagination
-          />
+        <div style={{ border: '3px solid white', borderRadius: '4px' }}>
+          <DataTable
+            columns={columns}
+            data={getHotels}
+            fixedHeader
+            fixedHeaderScrollHeight="300px"
+            progressPending={(getHotels.length === 0)}
+            theme="dark"
+            />
+        </div>
     )) || <div></div>;
 }
 

@@ -25,7 +25,7 @@ function WeatherWidget(props){
 
   }
   return (
-    <div class="weatherWidget">
+    <div className="weatherWidget" style={{ border: '3px solid white', borderRadius: '4px' }}>
       {s()}
     </div>
   )

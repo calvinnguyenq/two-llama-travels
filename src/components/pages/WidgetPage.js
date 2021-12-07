@@ -41,15 +41,24 @@ class WidgetPage extends React.Component{
           </div>
           <Button type="submit">Submit</Button>
         </form>
-
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ width: "75%", margin: '20px' }}>{this.state.value && <WeatherWidget destination={this.state.value}/>}</div>
-          <div style={{ width: "40%", margin: '20px' }}>{this.state.value && <FlightWidget destination={this.state.value} place={this.state.value2}/>}</div>
-          <div style={{ width: "40%", margin: '20px' }}>{this.state.value && <Hotels destination={this.state.value} />}</div>
-          <div style={{ width: "100%", marginTop: '20px', fontColor: 'white' }}>{this.state.value && <h1>Itinerary</h1>}</div>
-          <div style={{ width: "100%" }}>{this.state.value && <Itinerary destination={this.state.value} />}</div>
-        </div>
+        {this.state.value && <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Weather</h1>}</div> 
+            <div style={{ width: "80%", margin: '20px' }}>{this.state.value && <WeatherWidget destination={this.state.value}/>}</div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Flights</h1>}</div> 
+            <div style={{ width: "80%", margin: '20px' }}>{this.state.value && <FlightWidget destination={this.state.value} place={this.state.value2}/>}</div>
+         </div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Hotels</h1>}</div>
+            <div style={{ all: 'initial', width: "80%", margin: '20px' }}>{this.state.value && <Hotels destination={this.state.value} />}</div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Itinerary</h1>}</div>
+            <div style={{ all: 'initial', width: "100%" }}>{this.state.value && <Itinerary destination={this.state.value} />}</div>
+          </div>
+        </div>}
       </div>
     );
   }

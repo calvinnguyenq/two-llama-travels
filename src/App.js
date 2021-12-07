@@ -18,16 +18,16 @@ function App() {
   
     return (
         <Router>
-          <Navbar/>
+          <Navbar />
           <Routes style={{ flex: 1 }}>
-            <Route path='/' exact element={ <Home/> }/>
-            <Route path='/sign-up' element={ <Signup/> }/>
-            <Route path='/log-in' element={ <Login/> }/>
-            <Route path='/widget-page' element={ <WidgetPage/> }/>
-            <Route path='/about-us' element={ <AboutUs/> }/>
-            <Route path='/contact-us' element={ <ContactUs/> }/>
+            <Route path='/' exact element={ <Home /> }/>
+            <Route path='/sign-up' element={ <Signup /> }/>
+            <Route path='/log-in' element={ <Login /> }/>
+            <Route path='/widget-page' element={ <WidgetPage /> }/>
+            <Route path='/about-us' element={ <AboutUs /> }/>
+            <Route path='/contact-us' element={ <ContactUs /> }/>
           </Routes>
-          <Footer/>
+          {/* <Footer /> */}
         </Router>
     ); 
   
