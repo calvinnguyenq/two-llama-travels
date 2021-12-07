@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../App.css'
+import '../App.css'
 import WeatherWidget from '../WeatherWidget'
 import video from '../../images/llamawalking.mp4'
 import FlightWidget from '../FlightWidget';
@@ -39,23 +39,23 @@ class WidgetPage extends React.Component{
               <input type="text" name="location" component="input" placeholder='Enter Your Location...'/>
             </label>
           </div>
-          <Button type="submit">Submit</Button>
+          <Button type="submit"><h3>Submit</h3></Button>
         </form>
         {this.state.value && <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
-            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Weather</h1>}</div> 
+          <div className="widget" >
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h2 style={{ color: 'white', textAlign: 'center' }}>Weather</h2>}</div> 
             <div style={{ width: "80%", margin: '20px' }}>{this.state.value && <WeatherWidget destination={this.state.value}/>}</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
-            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Flights</h1>}</div> 
+          <div className="widget" >
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h2 style={{ color: 'white', textAlign: 'center' }}>Flights</h2>}</div> 
             <div style={{ width: "80%", margin: '20px' }}>{this.state.value && <FlightWidget destination={this.state.value} place={this.state.value2}/>}</div>
          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
-            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Hotels</h1>}</div>
+          <div className="widget" >
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h2 style={{ color: 'white', textAlign: 'center' }}>Hotels</h2>}</div>
             <div style={{ all: 'initial', width: "80%", margin: '20px' }}>{this.state.value && <Hotels destination={this.state.value} />}</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(0, 0, 0, 0.3)', border: '4px solid white', borderRadius: '3px', width: "80%", marginTop: "30px" }}>
-            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h1 style={{ color: 'white', textAlign: 'center' }}>Itinerary</h1>}</div>
+          <div className="widget" >
+            <div style={{ all: 'initial', width: "100%", marginTop: '20px' }}>{this.state.value && <h2 style={{ color: 'white', textAlign: 'center' }}>Itinerary</h2>}</div>
             <div style={{ all: 'initial', width: "100%" }}>{this.state.value && <Itinerary destination={this.state.value} />}</div>
           </div>
         </div>}
