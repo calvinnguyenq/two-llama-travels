@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Common Phrases for Your Trip</title>
+    <title>Web Form With Language Translation</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="/favicon.ico" type="image/x-icon" rel="icon" />
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -15,7 +16,6 @@
       background-color: #89CFF0;
       font-family: source-sans-pro, sans-serif;
     }
-
     h1 {
       margin-left: auto;
       margin-top: 50px;
@@ -24,12 +24,10 @@
       font-size: 2.8em;
       color: #ffffff;
     }
-
     div {
       width: 500px;
       margin: auto;
     }
-
     .formStyle { 
       background-color: #89CFF0;
       padding: 20px; 
@@ -45,7 +43,6 @@
       font-weight: 100;
       color: #ffffff;
     }
-
     .formButton {
       float: right;
       background-color:#ffffff;
@@ -58,17 +55,14 @@
       margin-right: 60px;
       text-decoration:none;
     }
-
     .formButton:hover {
       background-color: #89CFF0;
       color:#ffffff;
     }
-
     .formButton:active {
       position:relative;
       top:3px;
     }
-
     .translate {
       margin-left: auto;
       margin-top: 50px;
@@ -78,102 +72,79 @@
       width:50%;
       
     }
-
     .translate-option {
       width:50%;
       
     }
-
     /*To remove the outline that appears on clicking the input textbox*/
     input:focus {
       outline: none;
     }
-
     /* To format the placeholder text color */
     ::-webkit-input-placeholder {
        color: #ecf0f1;
     }
-
     :-moz-placeholder { /* Firefox 18- */
        color: #ecf0f1;  
     }
-
     ::-moz-placeholder {  /* Firefox 19+ */
        color: #ecf0f1;  
     }
-
     :-ms-input-placeholder {  
        color: #ecf0f1;  
     }
     </style>
     <script type="text/javascript">
-
-      var options = {
-        method: 'POST',
-        url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
-        headers: {
-          'content-type': 'application/x-www-form-urlencoded',
-          'accept-encoding': 'application/gzip',
-          'x-rapidapi-host': 'google-translate1.p.rapidapi.com',
-          'x-rapidapi-key': '6710c4bb3fmsh0f1ec7426a58a21p1c666cjsn476dcbf335ec'
-      },
-      "data": {
-        "source": "en",
-        "q": "Common Phrases| Hello | How do You say ..? | How do I get to.. | Beware of the Two Llamas | My Name is ..| Bye",
-        "target": ""
-      }
       
-    }
-
+      const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://nlp-translation.p.rapidapi.com/v1/translate",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "x-rapidapi-host": "nlp-translation.p.rapidapi.com",
+          "x-rapidapi-key": "6710c4bb3fmsh0f1ec7426a58a21p1c666cjsn476dcbf335ec"
+        },
+        "data": {
+          "text": 'Common Phrases| Hello | How do You say ..? | How do I get to.. | Beware of the Two Llamas | My Name is ..| Bye',
+          "to": "es",
+          "from": "en",
+        },
+      };
+    
+    
     $(document).ready(function(){
-
         $(".dropdown-item").click(function(e){
-
           if($(this).attr("tolang") != 'en'){
-
-            settings.data.target = $(this).attr("tolang");
+            settings.data.to = $(this).attr("tolang");
             
             fetchTranslation();
-
             $('button').html($(this).html());
-
           } else {
-
-            updatePlaceholders(settings.data.q);
-
+            updatePlaceholders(settings.data.text);
             $('#langSel').html("Translate to");
-
           }  
-
         });
-
     });
-
-    function updatePlaceholders(updateString){
-
-      var comp = updateString.split('|')
-
-      $('form > input').each(function(idx){
-
-        $(this).prop("placeholder", comp[idx+1].trim() );
-
-      });
-
-        $("#formHeading").html(comp[0]);
-
-    }
-
     function fetchTranslation(){
       $.ajax(settings).done(function (response) {
-          
-      console.log(response);
-        var translatedText = response.data.translations[0].translatedText;
-          
+        
+        console.log(response);
+        var translatedText = response.translated_text;
+        
         updatePlaceholders(translatedText);
-          
+        
       });
     }
-
+    function updatePlaceholders(updateString){
+      var spi = JSON.stringify(updateString)
+      var comp = spi.split('|')
+      $('form > input').each(function(idx){
+        $(this).prop("placeholder", comp[idx+1].trim() );
+      });
+      $("#formHeading").html(comp[0]);
+    }
     </script>
   </head>
 <body>
@@ -194,18 +165,18 @@
         <a class="dropdown-item" href="#" tolang="de">German</a>
       </div>
     </div>
-    <h1 id="listHeading">
-        Common Phrases: 
+    <h1 id="formHeading">
+        Common Phrases:
     </h1>
     <div>
-      <ul>
-        <li>Hello</li>
-        <li>How do You say ..?</li>
-        <li>How do I get to..</li>
-        <li>Beware of the Two Llamas</li>
-        <li>My Name is ..</li>
-        <li>Bye</li>
-      </ul>
+      <form action="">
+        <input type="text" name="name" class="formStyle" placeholder="Hello" required />
+        <input type="text" name="email" class="formStyle" placeholder="How do You say ..?" required />
+        <input type="email" name="email" class="formStyle" placeholder="How do I get to.." required />
+        <input type="text" name="name" class="formStyle" placeholder=" Beware of the Two Llamas" required />
+        <input type="text" name="email" class="formStyle" placeholder="My Name is .." required />
+        <input type="email" name="email" class="formStyle" placeholder="Bye" required />
+      </form>
     </div>
     </div>
     <div class="col-sm">
