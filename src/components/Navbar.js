@@ -131,6 +131,11 @@ function Navbar() {
                             <h3>Log In</h3>
                         </Link>
                     </li>
+                    <li className='nav-item'>
+                        <Link to='/profile' className='nav-link'>
+                            <h3>Profile</h3>
+                        </Link>
+                    </li>
                 </div>
             </nav>
             <Sidebar 

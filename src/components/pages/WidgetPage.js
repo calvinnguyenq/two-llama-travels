@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../App.css'
+import '../App.css'
 import WeatherWidget from '../WeatherWidget'
 import video from '../../images/llamawalking.mp4'
 import FlightWidget from '../FlightWidget';

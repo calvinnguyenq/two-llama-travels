@@ -1,5 +1,6 @@
+
 import React from 'react';
-import '../../App.css';
+import '../App.css';
 import video from '../../images/twollamavideo.mp4';
 import { Button } from "@material-ui/core";
 import { Link } from 'react-router-dom'
