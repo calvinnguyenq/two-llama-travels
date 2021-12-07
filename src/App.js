@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 import './components/Destination.css';
 import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
@@ -13,21 +13,21 @@ import './components/Footer.css';
 import AboutUs from './components/pages/AboutUs';
 import ContactUs from './components/pages/ContactUs';
 
-function App() {
+window.localStorage.setItem('sizeCounter', 0);
 
-  
+ function App() {  
+    
     return (
         <Router>
           <Navbar />
           <Routes style={{ flex: 1 }}>
-            <Route path='/' exact element={ <Home /> }/>
+            <Route path='/' exact element={ <Fragment><Home /> <Footer /></Fragment> }/>
             <Route path='/sign-up' element={ <Signup /> }/>
             <Route path='/log-in' element={ <Login /> }/>
             <Route path='/widget-page' element={ <WidgetPage /> }/>
             <Route path='/about-us' element={ <AboutUs /> }/>
             <Route path='/contact-us' element={ <ContactUs /> }/>
           </Routes>
-          <Footer />
         </Router>
     ); 
   
