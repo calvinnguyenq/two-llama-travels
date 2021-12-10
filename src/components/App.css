@@ -42,7 +42,6 @@ p {
 .about-us,
 .widget-page,
 .contact-us{
-    height: 90vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

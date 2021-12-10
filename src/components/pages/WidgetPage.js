@@ -32,10 +32,10 @@ class WidgetPage extends React.Component{
         <video id='vid' src={video} autoPlay loop muted/>
         <form style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} onSubmit={this.handleChange}>
           <div>
-            <label>
+            <label style={{width: "80%"}}>
               <input type="text" name="destination" component="input" placeholder='Enter Your Destination...'/>
             </label>
-            <label>
+            <label style={{width: "80%"}}>
               <input type="text" name="location" component="input" placeholder='Enter Your Location...'/>
             </label>
           </div>

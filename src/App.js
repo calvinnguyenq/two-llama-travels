@@ -21,13 +21,14 @@ window.localStorage.setItem('sizeCounter', 0);
         <Router>
           <Navbar />
           <Routes style={{ flex: 1 }}>
-            <Route path='/' exact element={ <Fragment><Home /> <Footer /></Fragment> }/>
+            <Route path='/' exact element={ <Home /> }/>
             <Route path='/sign-up' element={ <Signup /> }/>
             <Route path='/log-in' element={ <Login /> }/>
             <Route path='/widget-page' element={ <WidgetPage /> }/>
             <Route path='/about-us' element={ <AboutUs /> }/>
             <Route path='/contact-us' element={ <ContactUs /> }/>
           </Routes>
+          <Footer />
         </Router>
     ); 
   

@@ -2,7 +2,7 @@ import { React, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { Button, List } from '@material-ui/core';
-import { Add, Remove, Videocam, VideocamOff } from '@material-ui/icons';
+import { Add, Remove, Videocam, VideocamOff, AccountCircle } from '@material-ui/icons';
 import { HamburgerArrow } from 'react-animated-burgers'
 import Sidebar from 'react-sidebar';
 
@@ -131,11 +131,11 @@ function Navbar() {
                             <h3>Log In</h3>
                         </Link>
                     </li>
-                    <li className='nav-item'>
-                        <Link to='/profile' className='nav-link'>
-                            <h3>Profile</h3>
-                        </Link>
-                    </li>
+                </div>
+                <div style={{ justifySelf: 'flex-end', alignSelf: 'center' }}>
+                    <Link to='/profile' >
+                        <AccountCircle className="profile" style={{ fontSize: '40' }} />
+                    </Link>
                 </div>
             </nav>
             <Sidebar 
@@ -152,7 +152,7 @@ function Navbar() {
                     </List>
                 }
                 open={isOpen}
-                styles={{ root: { top: "80px", right: "90%", bottom: "67%" }, sidebar: { background: "rgba(0,0,0,0.5)" }, content: { top: '10px' } }}
+                styles={{ root: { top: "80px", bottom: "60%", right: '70%' }, sidebar: { background: "rgba(0,0,0,0.5)" }, content: { top: '10px' } }}
             >
                 <div id="blanksoidontgetanerror"></div>
             </Sidebar>

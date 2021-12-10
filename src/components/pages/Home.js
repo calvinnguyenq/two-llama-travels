@@ -10,7 +10,7 @@ function Home() {
         <div className='home'>
             <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
                 <h1 id='text'>Your Llama Adventure Awaits You...</h1>    
-                <Button component={Link} to="/widget-page" variant="contained" color="secondary" size="large"><h3>Choose Your Destination</h3></Button>
+                <Button component={Link} to="/widget-page" variant="contained" color="default" size="medium"><h3>Choose Your Destination</h3></Button>
             </div>
             <video id='vid' src={video} autoPlay loop muted/>
         </div>
